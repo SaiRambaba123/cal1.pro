@@ -1,0 +1,138 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JavaScript Form Validation</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body{
+        overflow: hidden;
+        background:linear-gradient(to bottom,rgb(206, 25, 55) ,blue);
+    }
+    .container{
+        position: relative;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        flex-wrap: wrap;
+        min-height: 100vh;
+        width:450px;
+        height: 200px;
+      background-color:rgba(255,255, 255, 0.2);
+      border-radius: 20px;
+      left:30%;
+      border-top: 2px solid white;
+      border-right: 2px solid white;
+    }
+    .container h1{
+        position: relative;
+        color: aqua;
+        top:80px
+    }
+    .container .formdesign{
+        padding-top: 10px;
+        margin-bottom: 5px;
+        border-radius:10px ;
+        color: white;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+    .container input{
+        padding: 5px;
+        border-radius: 10px;
+        border:none;
+        background-color:rgba(255,255, 255, 0.5);
+    }
+    input[type=submit]{
+        color:white;
+        font-size: 18px;
+        padding: 5px;
+        margin-top: 20px;
+        position: absolute;
+        left:170px;
+        width:100px;
+    }
+    input[type=submit]:hover{
+        letter-spacing: 1px;
+        cursor: pointer;
+        transform: translateY(-10px);
+        background-color: rgb(194, 40, 65);
+    }
+    .container span.square{
+        position: absolute;
+        width:100px;
+        height: 100px;
+        background:rgba(255, 255, 255, 0.5);
+        border-radius: 10px;
+        top:20px;
+        left:-50px;
+        animation: animate 3s linear infinite;
+    }
+    .container span.square1{
+        position: absolute;
+        width:100px;
+        height: 100px;
+        background:rgba(255, 255, 255, 0.5);
+        border-radius: 10px;
+        bottom:20px;
+        right:-60px;   
+        animation: animate 5s linear infinite;
+    }
+    @keyframes animate {
+        0%,100%
+        {
+            transform: translateY(10px);
+        }
+        50%
+        {
+            transform: translateY(-10px);
+        }
+        
+    }
+</style>
+<body>
+    <div class="container">
+    <h1>Welcome to Login Page</h1>
+    <span class="square" style="--i:0"></span>
+    <span class="square1" style="--i:1"></span>
+    <form aciton ="/myaction.php" name="myForm" onsubmit="return validateForm()" method="post">
+        <div class="formdesign" id="name">
+            Name: <input type="text" name="fname" required><b><span class="formerror"> </span></b>
+        </div>
+
+        <div class="formdesign" id="email">
+            Email: <input type="email" name="femail" required><b><span class="formerror"> </span></b>
+        </div>
+
+        <div class="formdesign" id="phone">
+            Phone: <input type="phone" name="fphone" required><b><span class="formerror"></span></b>
+        </div>
+
+        <div class="formdesign" id="pass">
+            Password: <input type="password" name="fpass" required><b><span class="formerror"</span></b>
+        </div>
+
+        <div class="formdesign" id="cpass">
+            Confirm Password: <input type="password" name="fcpass" required><b><span class="formerror"></span></b>
+        </div>
+
+        <input class="but" type="submit" value="Submit">
+
+    </form>
+    </div>
+</body>
+<script src="index.js"></script>
+
+</html>
